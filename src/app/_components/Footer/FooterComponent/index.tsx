@@ -41,7 +41,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
             </Link>
 
-            <p>l</p>
+            <p>{footer.copyright}</p>
           </div>
         </Gutter>
       </div>
