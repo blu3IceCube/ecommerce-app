@@ -2,14 +2,16 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import { Footer } from '../../../../payload/payload-types'
 import { inclusions, noHeaderFooterUrls } from '../../../constants'
 import { Gutter } from '../../Gutter'
 
 import classes from './index.module.scss'
 
-const FooterComponent = ({ footer }) => {
+const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
@@ -32,7 +34,17 @@ const FooterComponent = ({ footer }) => {
         </ul>
       </Gutter>
 
-      <div className={classes.footer}></div>
+      <div className={classes.footer}>
+        <Gutter>
+          <div className={classes.wrap}>
+            <Link href="/">
+              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
+            </Link>
+
+            <p>{footer.copyright}</p>
+          </div>
+        </Gutter>
+      </div>
     </footer>
   )
 }
