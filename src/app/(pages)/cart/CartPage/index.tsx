@@ -60,6 +60,8 @@ export const CartPage: React.FC<{
                 <div className={classes.header}>
                   <p>Products</p>
                   <div className={classes.headerItemDetails}>
+                    <p></p>
+                    <p></p>
                     <p>Quantity</p>
                   </div>
                   <p className={classes.headersubtotal}>Subtotal</p>
